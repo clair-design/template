@@ -1,0 +1,29 @@
+{
+  "root": true,
+  {{#if_eq lintConfig "standard"}}
+  "extends": ["plugin:vue/essential", "standard"],
+  {{/if_eq}}
+  {{#if_eq lintConfig "neat"}}
+  "extends": ["plugin:vue/essential", "neat"],
+  {{/if_eq}}
+  {{#if_eq lintConfig "airbnb"}}
+  "extends": ["plugin:vue/essential", "airbnb-base"],
+  {{/if_eq}}
+  {{#if_eq lintConfig "none"}}
+  "extends": ["plugin:vue/essential"],
+  {{/if_eq}}
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": false
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["vue"]
+}
+

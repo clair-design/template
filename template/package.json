@@ -1,0 +1,79 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server --config build/webpack.config.js --open",
+    {{#lint}}
+    "precommit": "lint-staged",
+    {{/lint}}
+    "build": "webpack --config build/webpack.config.js"
+  },
+  {{#lint}}
+  "lint-staged": {
+    "src/**/*.css": [
+      "stylelint"
+    ],
+    "src/**/*.js": [
+      "eslint"
+    ],
+    "src/**/*.vue": [
+      "eslint"
+    ]
+  },
+  {{/lint}}
+  "author": "{{ author }}",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "clair": "^0.2.1",
+    "css-loader": "^0.28.7",
+    {{#lint}}
+    "eslint": "^4.13.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    {{/lint}}
+    {{#if_eq lintConfig "standard"}}
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-config-standard": "^10.2.1",
+    {{/if_eq}}
+    {{#if_eq lintConfig "neat"}}
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-config-neat": "^1.0.0",
+    {{/if_eq}}
+    {{#if_eq lintConfig "airbnb"}}
+    "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    {{/if_eq}}
+    "extract-text-webpack-plugin": "^3.0.2",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.4",
+    "postcss": "^6.0.14",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-each": "^0.10.0",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.9",
+    "style-loader": "^0.19.0",
+    {{#stylelint}}
+    "stylelint": "^8.3.1",
+    "stylelint-config-standard": "^18.0.0",
+    {{/stylelint}}
+    "vue-loader": "^13.5.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1"
+  }
+}

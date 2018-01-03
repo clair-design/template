@@ -1,0 +1,23 @@
+{
+  "name": "vue-clair-template",
+  "version": "1.0.0",
+  "description": "A vue-cli template for Clair.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clair-design/template.git"
+  },
+  "keywords": [
+    "Vue",
+    "Template",
+    "Clair"
+  ],
+  "author": "webzhao@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clair-design/template/issues"
+  },
+  "homepage": "https://github.com/clair-design/template#readme"
+}
