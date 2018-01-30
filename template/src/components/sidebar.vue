@@ -1,26 +1,3 @@
-<template>
-  <div class="sidebar">
-    <a class="logo" href="#">
-      <img src="https://s1.ssl.qhres.com/static/9df9c3c715a8b6cb.svg" alt="Clair">
-    </a>
-    <c-menu mode="vertical">
-      <c-submenu v-for="m in menu" :key="m.title" open>
-        <template slot="title">
-          <c-icon :name="m.icon" valign="middle" />{{ m.title }}
-        </template>
-        <router-link
-          v-for="child in m.children"
-          :key="child.title"
-          tag="c-menu-item"
-          :to="child.to"
-        >
-          <a>{{ child.title }}</a>
-        </router-link>
-      </c-submenu>
-    </c-menu>
-  </div>
-</template>
-
 <script>
 export default {
   data () {
@@ -50,6 +27,28 @@ export default {
 }
 </script>
 
+<template>
+  <div class="sidebar">
+    <a class="logo" href="#">
+      <img src="https://s1.ssl.qhres.com/static/9df9c3c715a8b6cb.svg" alt="Clair">
+    </a>
+    <c-menu mode="vertical">
+      <c-submenu v-for="m in menu" :key="m.title" open>
+        <template slot="title">
+          <c-icon :name="m.icon" valign="middle" />{{ m.title }}
+        </template>
+        <router-link
+          v-for="child in m.children"
+          :key="child.title"
+          tag="c-menu-item"
+          :to="child.to"
+        >
+          <a>{{ child.title }}</a>
+        </router-link>
+      </c-submenu>
+    </c-menu>
+  </div>
+</template>
 
 <style scoped lang="postcss">
   @import url('clair/src/css/variables.css');

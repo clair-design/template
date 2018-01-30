@@ -13,14 +13,14 @@
 </template>
 
 <script>
-  import Sidebar from './sidebar.vue'
-  import Header from './header.vue'
-  export default {
-    components: {
-      'c-sidebar': Sidebar,
-      'c-header': Header
-    }
+import Sidebar from './sidebar.vue'
+import Header from './header.vue'
+export default {
+  components: {
+    'c-sidebar': Sidebar,
+    'c-header': Header
   }
+}
 </script>
 
 <style scoped>
